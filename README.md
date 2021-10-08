@@ -60,7 +60,7 @@
 * CUDA 10.2
 * cuDNN 8.1.0
   
-### 2、python环境
+### 2、Python环境
 * Python 3.8
 * Pytorch 1.9.1
 * matplotlib
