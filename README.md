@@ -1,6 +1,6 @@
 
 
-# 人工智能安全——深度学习超参数研究
+# 人工智能安全——深度学习超参数
 
 本项目搭建了 ResNet18、VGG16 等网络对 CIFAR10 数据集进行图像分类任务训练，并在此基础上研究了 **学习率、Momentum、L2 Regularization** 等超参数对训练实际表现的影响，之后研究了超参数之间的关联性与调参配置优化问题。
 
@@ -59,12 +59,12 @@
 * GPU NVIDIA T4
 * CUDA 10.2
 * cuDNN 8.1.0
-* Python 3.8
   
 ### 2、python环境
+* Python 3.8
 * Pytorch 1.9.1
 * matplotlib
-* scipy
+* Scipy
 
 
 ## 超参数的影响
@@ -119,9 +119,9 @@ Momentum(动量)，作为 SGD 的一种加速策略，被 Pytorch 封装进了 S
 </div>
 
 简而言之就是每次对参数进行更新时，都会再考量一个 ν 的动量，这个动量通过参数加权平均了之前的梯度，结果就是使参数更新可以带上先前梯度信息的惯性，可以更快收敛。具体其优点有：
-* 能通过局部极小点；
-* 更快的收敛速度；
-* 减少更新时的震荡...
+1. 能通过局部极小点
+2. 更快的收敛速度
+3. 减少更新时的震荡
 
 #### Weight_decay
 
@@ -158,7 +158,7 @@ scheduler = optim.lr_scheduler.MultiStepLR(optimizer, milestones=[20, 30], gamma
   <img src="img/lr_decay_acc.png"  />
   <img src="img/lr_decay_loss.png"  />
 </div>
-使用学习率衰减策略的训练效果如图，可见在训练中期，约 4000 iterations，准确率会有一个小跃迁，就是学习率衰减所导致的，成功使模型获得更好的效果。
+使用学习率衰减策略的训练效果如图，可见在训练中期，约 4000 iterations 时，准确率会有一个小跃迁，就是学习率衰减所导致的，成功使模型获得更好的效果。
 
 ### 优化器设置
 
