@@ -135,6 +135,23 @@ Momentum(动量)，作为 SGD 的一种加速策略，被 Pytorch 封装进了 S
 
 #### 实验
 
+本次实验将 momentum 作为变量，所有组别都配备L2正则，获得 accuracy 曲线，可见 momentum 对模型训练起到积极作用：
+
+<div align="center">
+  <img src="img/m_acc.png"  />
+</div>
+
+除此之外，还通过第二范数，对训练初期的梯度进行测量（lr=0.1)，结果如下：
+
+| 训练配置 | 梯度大小 (norm-2) |
+|----|---|
+| SGD | 0.75 ± 0.39 |
+| momentum SGD | 1.37 ± 0.43 |
+| momentum SGD + L2 | 1.78 ± 0.91 |
+
+不过，令人十分费解的是，为什么加了L2之后梯度大小反而也会变大？
+
+
 ## 关联性与调参建议
 ### Batch_size、epoch与学习率
 

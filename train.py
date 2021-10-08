@@ -8,11 +8,7 @@ import argparse
 import time
 from model import ResNet18, Vgg16_Net
 from utils import *
- 
-# 定义是否使用GPU
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
- 
-# 参数设置,使得我们能够手动输入命令行参数，就是让风格变得和Linux命令行差不多
+
 parser = argparse.ArgumentParser(description='AI Sec homework_1')
 parser.add_argument('--dataset', type=str, default='cifar10', help='cifar-10')
 parser.add_argument('--epochs', type=int, default=40, help="epochs")
